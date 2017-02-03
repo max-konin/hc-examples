@@ -5,16 +5,15 @@
 
 int main(int argc, char* argv[]) {
 
-//  RestClient::Connection* conn = new RestClient::Connection("hc-host.example.com");
+  RestClient::Connection* conn = new RestClient::Connection("hc-host.example.com");
 
   // set headers
-  //RestClient::HeaderFields headers;
-  //headers["Accept"] = "application/json";
-  //conn->SetHeaders(headers);
+  RestClient::HeaderFields headers;
+  headers["Accept"] = "application/json";
+  conn->SetHeaders(headers);
 
-  RestClient::Response hypernets = RestClient::get("https://google.com");
 
-  //RestClient::Response hypernets = conn->get("/api/v1/hypernets");
+  RestClient::Response hypernets = conn->get("/api/v1/lists/graph_adjacency/5892fa1caf18c22abb000001  ");
 
   std::cout << hypernets.code << " " << hypernets.body;
 
